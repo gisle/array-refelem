@@ -8,7 +8,7 @@ require DynaLoader;
 @ISA = qw(Exporter DynaLoader);
 @EXPORT_OK = qw(av_store av_push hv_store);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 Array::RefElem->bootstrap($VERSION);
 
