@@ -1,0 +1,16 @@
+^pod2html-(dir|item)cache$
+^blib/
+\.old$
+\.bak$
+Makefile$
+^MANIFEST.SKIP$
+^#
+/#
+~$
+\b(RCS|CVS)/[^/]+$
+\.cvsignore$
+pm_to_blib$
+\.o$
+\.c$
+\.bs$
+^tar/
