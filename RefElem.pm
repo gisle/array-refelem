@@ -8,7 +8,7 @@ require DynaLoader;
 @ISA = qw(Exporter DynaLoader);
 @EXPORT_OK = qw(av_store av_push hv_store);
 
-$VERSION = '0.02';
+$VERSION = '1.00';
 
 Array::RefElem->bootstrap($VERSION);
 
@@ -30,7 +30,7 @@ Array::RefElem - Set up array elements as aliases
 
 =head1 DESCRIPTION
 
-This module give direct access to some of the internal perl routines
+This module gives direct access to some of the internal Perl routines
 that let you store things in arrays and hashes.  The following
 functions are available:
 
@@ -38,18 +38,18 @@ functions are available:
 
 =item av_store(@array, $index, $value)
 
-Stores $value inside @array at the indicated $index.  After this call
-$array[$index] and $value will denote the same thing.
+Stores $value in @array at the specified $index.  After executing this call,
+$array[$index] and $value denote the same thing.
 
 =item av_push(@array, $value)
 
-Push $value onto the @array.  After this call $array[-1] and $value
-will denote the same thing.
+Pushes $value onto the @array.  After executing this call, $array[-1] and $value
+denote the same thing.
 
 =item hv_store(%hash, $key, $value);
 
-Store $value in the %hash with the given $key. After this call
-$hash{$key} and $value will denote the same thing.
+Stores $value in the %hash with the given $key. After executing this call,
+$hash{$key} and $value denote the same thing.
 
 =back
 
