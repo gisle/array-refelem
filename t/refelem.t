@@ -1,4 +1,4 @@
-print "1..4\n";
+print "1..5\n";
 
 use strict;
 use Array::RefElem qw(av_store av_push hv_store);
@@ -26,6 +26,11 @@ hv_store(%h, "foo", $a);
 $h{foo} = "bar";
 print "not " unless $a eq "bar";
 print "ok 4\n";
+
+$a[2] = [3];
+av_store(@a, 2, $a[2][0]);
+print "not " unless $a[2] == 3;
+print "ok 5\n";
 
 if (shift) {
    require Devel::Peek;
