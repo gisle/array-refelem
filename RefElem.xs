@@ -22,8 +22,9 @@ av_store(avref, key, val)
 	if (!SvROK(avref) || SvTYPE(SvRV(avref)) != SVt_PVAV)
 	   croak("First argument to av_store() must be an array reference");
 	av = (AV*)SvRV(avref);
-	if (av_store(av, key, val))
-	    SvREFCNT_inc(val);
+        SvREFCNT_inc(val);
+	if (!av_store(av, key, val))
+	    SvREFCNT_dec(val);
 
 void
 av_push(avref, val)
@@ -51,6 +52,7 @@ hv_store(hvref, key, val)
 	if (!SvROK(hvref) || SvTYPE(SvRV(hvref)) != SVt_PVHV)
 	   croak("First argument to hv_store() must be a hash reference");
 	hv = (HV*)SvRV(hvref);
-	if (hv_store_ent(hv, key, val, 0))
-	    SvREFCNT_inc(val);
+        SvREFCNT_inc(val);
+	if (!hv_store_ent(hv, key, val, 0))
+	    SvREFCNT_dec(val);
 
