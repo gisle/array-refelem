@@ -4,3 +4,4 @@ Makefile.PL
 README
 RefElem.pm
 RefElem.xs
+t/refelem.t
